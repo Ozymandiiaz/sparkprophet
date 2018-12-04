@@ -254,7 +254,7 @@ if __name__ == '__main__':
     ])
 
     df = spark.createDataFrame(df, schema)
-    df.coalesce(1).write.options(header=True).csv(
+    df.write.options(header=True).csv(
         './data/output', mode='overwrite')
 
     spark.stop()
